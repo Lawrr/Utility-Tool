@@ -3,9 +3,12 @@ using System.Windows.Forms;
 
 namespace UtilityTool {
     static class Program {
+        // Constants
+        public static string ProgramName { get; private set; } = "Utility Tool";
 
-        // The form which is opened by clicking the tray icon
+        // Static objects
         public static MainForm MainForm { get; private set; }
+        public static Tray Tray { get; private set; }
 
         /// <summary>
         /// The main entry point for the application.
@@ -16,6 +19,7 @@ namespace UtilityTool {
             Application.SetCompatibleTextRenderingDefault(false);
 
             MainForm = new MainForm();
+            Tray = new Tray();
 
             Application.Run(MainForm);
         }
