@@ -21,7 +21,17 @@ namespace UtilityTool {
             MainForm = new MainForm();
             Tray = new Tray();
 
+            // Event handlers
+            Application.ApplicationExit += new EventHandler(Application_ApplicationExit);
+
+            // Start application
             Application.Run(MainForm);
         }
+
+        private static void Application_ApplicationExit(object sender, EventArgs e) {
+            // Make it so the icon doesnt stay when exiting the program
+            Tray.TrayIcon.Visible = false;
+        }
+
     }
 }
