@@ -8,10 +8,10 @@ namespace UtilityTool {
         private ContextMenu ContextMenu;
 
         public Tray() {
-            InitializeTray();
+            InitTray();
         }
 
-        private void InitializeTray() {
+        private void InitTray() {
             // Context menu
             ContextMenu = new ContextMenu();
             ContextMenu.MenuItems.Add("Open " + Program.ProgramName, TrayIcon_OnOpenClicked);
