@@ -40,5 +40,6 @@ namespace UtilityTool {
         private void TrayIcon_OnExitClicked(object sender, EventArgs e) {
             Application.ExitThread();
         }
+
     }
 }

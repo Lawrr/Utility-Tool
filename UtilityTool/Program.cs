@@ -3,6 +3,7 @@ using System.Windows.Forms;
 
 namespace UtilityTool {
     static class Program {
+
         // Constants
         public static string ProgramName { get; private set; } = "Utility Tool";
 
