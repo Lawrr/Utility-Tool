@@ -12,8 +12,6 @@ namespace UtilityTool {
         Win = 8
     }
 
-    public delegate void HotKeyPressedEventHandler(object sender, HotKeyPressedEventArgs args);
-
     public class HotKeyPressedEventArgs : EventArgs {
         public ModifierKeys Modifiers { get; private set; }
         public Keys Key { get; private set; }
@@ -32,7 +30,7 @@ namespace UtilityTool {
         [DllImport("user32.dll")]
         public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
 
-        public event HotKeyPressedEventHandler HotKeyPressed;
+        public event EventHandler<HotKeyPressedEventArgs> HotKeyPressed;
 
         private Window HookWindow = new Window();
         private int CurrentHotKeyId;
@@ -71,7 +69,7 @@ namespace UtilityTool {
             // Id of message for hot key press
             private static int WM_HOTKEY = 0x0312;
 
-            public event HotKeyPressedEventHandler HotKeyPressed;
+            public event EventHandler<HotKeyPressedEventArgs> HotKeyPressed;
 
             public Window() {
                 CreateHandle(new CreateParams());
