@@ -10,6 +10,7 @@ namespace UtilityTool {
         // Static objects
         public static MainForm MainForm { get; private set; }
         public static Tray Tray { get; private set; }
+        public static HotKeyHandler HotKeyHandler { get; private set; }
 
         /// <summary>
         /// The main entry point for the application.
@@ -21,6 +22,7 @@ namespace UtilityTool {
 
             MainForm = new MainForm();
             Tray = new Tray();
+            HotKeyHandler = new HotKeyHandler();
 
             // Event handlers
             Application.ApplicationExit += new EventHandler(Application_ApplicationExit);
