@@ -36,10 +36,10 @@ namespace UtilityTool {
         private int CurrentHotKeyId;
 
         public KeyboardHook() {
-            HookWindow.HotKeyPressed += delegate(object sender, HotKeyPressedEventArgs args) {
+            HookWindow.HotKeyPressed += delegate(object sender, HotKeyPressedEventArgs e) {
                 // Invoke hot key pressed event
                 if (HotKeyPressed != null) {
-                    HotKeyPressed(this, args);
+                    HotKeyPressed(this, e);
                 }
             };
         }

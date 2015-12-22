@@ -8,15 +8,15 @@ namespace UtilityTool {
 
         public HotKeyHandler() {
             KeyboardHook = new KeyboardHook();
-            KeyboardHook.HotKeyPressed += new EventHandler<HotKeyPressedEventArgs>(KeyboardHook_HotKeyPressed);
             RegisterHotKeys();
+            KeyboardHook.HotKeyPressed += new EventHandler<HotKeyPressedEventArgs>(KeyboardHook_HotKeyPressed);
         }
 
         private void RegisterHotKeys() {
             KeyboardHook.RegisterHotKey(ModifierKeys.Control | ModifierKeys.Alt, Keys.Q);
         }
 
-        private void KeyboardHook_HotKeyPressed(object sender, HotKeyPressedEventArgs args) {
+        private void KeyboardHook_HotKeyPressed(object sender, HotKeyPressedEventArgs e) {
             Program.MainForm.Open();
         }
 
