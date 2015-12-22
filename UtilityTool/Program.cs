@@ -3,7 +3,6 @@ using System.Windows.Forms;
 
 namespace UtilityTool {
     public static class Program {
-
         // Constants
         public static string ProgramName { get; private set; } = "Utility Tool";
 
@@ -35,6 +34,5 @@ namespace UtilityTool {
             // Make it so the icon doesnt stay when exiting the program
             Tray.TrayIcon.Visible = false;
         }
-
     }
 }

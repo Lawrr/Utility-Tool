@@ -3,7 +3,6 @@ using System.Windows.Forms;
 
 namespace UtilityTool {
     public partial class MainForm : Form {
-
         public MainForm() {
             InitializeComponent();
             InitForm();
@@ -23,6 +22,5 @@ namespace UtilityTool {
             Hide();
             e.Cancel = true;
         }
-
     }
 }

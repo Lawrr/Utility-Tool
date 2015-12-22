@@ -3,7 +3,6 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace UtilityTool {
-
     [Flags]
     public enum ModifierKeys : uint {
         Alt = 1,
@@ -95,6 +94,5 @@ namespace UtilityTool {
                 DestroyHandle();
             }
         }
-
     }
 }

@@ -3,7 +3,6 @@ using System.Windows.Forms;
 
 namespace UtilityTool {
     public class HotKeyHandler {
-
         public KeyboardHook KeyboardHook { get; private set; }
 
         public HotKeyHandler() {
@@ -20,6 +19,5 @@ namespace UtilityTool {
         private void KeyboardHook_HotKeyPressed(object sender, HotKeyPressedEventArgs e) {
             Program.MainForm.ShowActivate();
         }
-
     }
 }

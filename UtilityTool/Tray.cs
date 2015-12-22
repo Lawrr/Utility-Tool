@@ -3,7 +3,6 @@ using System.Windows.Forms;
 
 namespace UtilityTool {
     public class Tray {
-
         public NotifyIcon TrayIcon { get; private set; }
         private ContextMenu ContextMenu;
 
@@ -40,6 +39,5 @@ namespace UtilityTool {
         private void TrayIcon_OnExitClicked(object sender, EventArgs e) {
             Application.ExitThread();
         }
-
     }
 }
