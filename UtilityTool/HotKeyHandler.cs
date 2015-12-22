@@ -2,13 +2,14 @@
 using System.Windows.Forms;
 
 namespace UtilityTool {
-    class HotKeyHandler {
+    public class HotKeyHandler {
 
         public KeyboardHook KeyboardHook { get; private set; }
 
         public HotKeyHandler() {
             KeyboardHook = new KeyboardHook();
             RegisterHotKeys();
+
             KeyboardHook.HotKeyPressed += new EventHandler<HotKeyPressedEventArgs>(KeyboardHook_HotKeyPressed);
         }
 
