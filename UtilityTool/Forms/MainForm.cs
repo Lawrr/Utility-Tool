@@ -9,12 +9,6 @@ namespace UtilityTool {
             InitForm();
         }
 
-        public void Open() {
-            Show();
-            BringToFront();
-            Activate();
-        }
-
         private void InitForm() {
             Icon = Properties.Resources.Icon;
         }
@@ -22,6 +16,7 @@ namespace UtilityTool {
         private void MainForm_FormLoad(object sender, EventArgs e) {
             CenterToScreen();
             BringToFront();
+            Activate();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {

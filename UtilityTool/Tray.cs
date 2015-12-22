@@ -30,11 +30,11 @@ namespace UtilityTool {
         }
 
         private void TrayIcon_DoubleClick(object sender, EventArgs e) {
-            Program.MainForm.Open();
+            Program.MainForm.ShowActivate();
         }
         
         private void TrayIcon_OnOpenClicked(object sender, EventArgs e) {
-            Program.MainForm.Open();
+            Program.MainForm.ShowActivate();
         }
 
         private void TrayIcon_OnExitClicked(object sender, EventArgs e) {

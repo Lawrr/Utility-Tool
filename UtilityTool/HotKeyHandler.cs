@@ -17,7 +17,7 @@ namespace UtilityTool {
         }
 
         private void KeyboardHook_HotKeyPressed(object sender, HotKeyPressedEventArgs e) {
-            Program.MainForm.Open();
+            Program.MainForm.ShowActivate();
         }
 
     }
