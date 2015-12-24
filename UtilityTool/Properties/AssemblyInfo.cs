@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Lawrr")]
-[assembly: AssemblyProduct("Utility Tool")]
+[assembly: AssemblyProduct("UtilityTool")]
 [assembly: AssemblyCopyright("Copyright © 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
