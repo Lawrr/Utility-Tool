@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace UtilityTool {
     partial class MainForm {
@@ -33,7 +34,7 @@ namespace UtilityTool {
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "MainForm";
-            this.Text = String.Format("{0} {1}", Program.ProgramName, Program.ProgramVersion);
+            this.Text = String.Format("{0} {1}", Application.ProductName, Application.ProductVersion);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_FormLoad);
             this.ResumeLayout(false);

@@ -3,10 +3,6 @@ using System.Windows.Forms;
 
 namespace UtilityTool {
     public static class Program {
-        // Constants
-        public const string ProgramName = "Utility Tool";
-        public const string ProgramVersion = "0.1.0";
-
         // Static objects
         public static MainForm MainForm { get; private set; }
         public static Tray Tray { get; private set; }
