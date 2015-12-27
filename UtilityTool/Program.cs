@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace UtilityTool {
@@ -13,6 +15,13 @@ namespace UtilityTool {
         /// </summary>
         [STAThread]
         static void Main() {
+            bool firstInstance;
+            Mutex mutex = new Mutex(true, "aaebf427-11d2-4266-ad81-d2f2676c7404", out firstInstance);
+            if (!firstInstance) {
+                MessageBox.Show(String.Format("An instance of {0} is already running", Application.ProductName));
+                return;
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 

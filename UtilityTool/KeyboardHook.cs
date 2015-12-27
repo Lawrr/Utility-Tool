@@ -22,13 +22,6 @@ namespace UtilityTool {
     }
 
     public class KeyboardHook : IDisposable {
-
-        [DllImport("user32.dll")]
-        public static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint vk);
-
-        [DllImport("user32.dll")]
-        public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
-
         public event EventHandler<HotKeyPressedEventArgs> HotKeyPressed;
 
         private Window HookWindow = new Window();
@@ -45,7 +38,7 @@ namespace UtilityTool {
 
         public void RegisterHotKey(ModifierKeys modifiers, Keys key) {
             // Register the hot key
-            bool hotKeyRegistered = RegisterHotKey(HookWindow.Handle, CurrentHotKeyId, (uint)modifiers, (uint)key);
+            bool hotKeyRegistered = NativeMethods.RegisterHotKey(HookWindow.Handle, CurrentHotKeyId, (uint)modifiers, (uint)key);
             if (hotKeyRegistered) {
                 // Increment hot key id
                 CurrentHotKeyId++;
@@ -58,7 +51,7 @@ namespace UtilityTool {
         public void Dispose() {
             // Unregister hot keys
             for (int i = 0; i < CurrentHotKeyId; i++) {
-                UnregisterHotKey(HookWindow.Handle, i);
+                NativeMethods.UnregisterHotKey(HookWindow.Handle, i);
             }
 
             HookWindow.Dispose();
