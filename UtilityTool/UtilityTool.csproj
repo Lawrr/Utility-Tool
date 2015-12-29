@@ -50,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Layout\Layout.cs" />
+    <Compile Include="Layout\LayoutDetails.cs" />
     <Compile Include="Layout\LayoutBuilder.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="Tasks\ProcessExecuteTask.cs" />

@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using UtilityTool.Layout;
 
-namespace UtilityTool {
+namespace UtilityTool.Forms {
     public partial class LayoutForm : Form {
         public LayoutForm() {
             InitializeComponent();

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace UtilityTool {
+namespace UtilityTool.Forms {
     partial class LayoutForm {
         /// <summary>
         /// Required designer variable.
