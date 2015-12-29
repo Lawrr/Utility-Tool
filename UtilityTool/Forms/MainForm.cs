@@ -5,10 +5,7 @@ namespace UtilityTool {
     public partial class MainForm : Form {
         public MainForm() {
             InitializeComponent();
-            InitForm();
-        }
 
-        private void InitForm() {
             Icon = Properties.Resources.Icon;
         }
 

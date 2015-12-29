@@ -7,11 +7,6 @@ namespace UtilityTool {
         private ContextMenu ContextMenu;
 
         public Tray() {
-            InitTray();
-        }
-
-        private void InitTray() {
-            // Context menu
             ContextMenu = new ContextMenu();
             ContextMenu.MenuItems.Add("Open " + Application.ProductName, TrayIcon_OnOpenClicked);
             ContextMenu.MenuItems.Add("-");
