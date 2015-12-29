@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 
 namespace UtilityTool {
-    partial class MainForm {
+    partial class LayoutForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -35,8 +35,8 @@ namespace UtilityTool {
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "MainForm";
             this.Text = String.Format("{0} {1}", Application.ProductName, Application.ProductVersion);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_FormLoad);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LayoutForm_FormClosing);
+            this.Load += new System.EventHandler(this.LayoutForm_FormLoad);
             this.ResumeLayout(false);
 
         }

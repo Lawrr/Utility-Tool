@@ -5,7 +5,7 @@ using System.Windows.Forms;
 namespace UtilityTool {
     public static class Program {
         // Static objects
-        public static MainForm MainForm { get; private set; }
+        public static LayoutForm MainForm { get; private set; }
         public static Tray Tray { get; private set; }
         public static HotKeyHandler HotKeyHandler { get; private set; }
 
@@ -24,7 +24,7 @@ namespace UtilityTool {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            MainForm = new MainForm();
+            MainForm = new LayoutForm();
             Tray = new Tray();
             HotKeyHandler = new HotKeyHandler();
 
