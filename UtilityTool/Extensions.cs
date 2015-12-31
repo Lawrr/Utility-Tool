@@ -38,13 +38,13 @@ namespace UtilityTool {
         }
 
         public static void SetProperty(this Object obj, JProperty prop) {
-            PropertyInfo propertyToSet = obj.GetType().GetProperty(prop.Name);
-            propertyToSet.SetValue(obj, Convert.ChangeType(prop.Value, propertyToSet.PropertyType));
+            PropertyInfo propToSet = obj.GetType().GetProperty(prop.Name);
+            propToSet.SetValue(obj, Convert.ChangeType(prop.Value, propToSet.PropertyType));
         }
 
         public static void SetProperty(this Object obj, string prop, Object value) {
-            PropertyInfo propertyToSet = obj.GetType().GetProperty(prop);
-            propertyToSet.SetValue(obj, Convert.ChangeType(value, propertyToSet.PropertyType));
+            PropertyInfo propToSet = obj.GetType().GetProperty(prop);
+            propToSet.SetValue(obj, Convert.ChangeType(value, propToSet.PropertyType));
         }
     }
 }
