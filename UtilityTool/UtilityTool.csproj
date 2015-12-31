@@ -57,6 +57,7 @@
     <Compile Include="Layout\ILayoutControl.cs" />
     <Compile Include="Layout\LayoutDetails.cs" />
     <Compile Include="NativeMethods.cs" />
+    <Compile Include="Tasks\ITask.cs" />
     <Compile Include="Tasks\ProcessExecuteTask.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Layout\LayoutForm.cs">
