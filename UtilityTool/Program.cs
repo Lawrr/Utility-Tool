@@ -25,7 +25,7 @@ namespace UtilityTool {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            MainForm = new LayoutForm((new LayoutBuilder("layout.json")).LayoutDetails);
+            MainForm = new LayoutForm((new LayoutBuilder(LayoutBuilder.DefaultLayoutPath)).LayoutDetails);
             Tray = new Tray();
             HotKeyHandler = new HotKeyHandler();
 

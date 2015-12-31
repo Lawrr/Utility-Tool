@@ -7,12 +7,18 @@ using System.Text.RegularExpressions;
 
 namespace UtilityTool.Layout {
     public class LayoutBuilder {
+        public const string DefaultLayoutPath = @"layout.json";
         public LayoutDetails LayoutDetails { get; private set; }
 
         public LayoutBuilder(string layoutPath) {
             LayoutDetails = new LayoutDetails();
 
-            // Parse json file
+            // Create layout json file if it does not exist
+            if (!File.Exists(layoutPath)) {
+                File.WriteAllText(DefaultLayoutPath, "{}");
+            }
+
+            // Parse layout json file
             string content = Regex.Replace(File.ReadAllText(layoutPath), @"\\", @"\\");
             JObject obj = JsonConvert.DeserializeObject<JObject>(content);
             // Go through each property and set the value
