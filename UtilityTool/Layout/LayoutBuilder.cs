@@ -13,7 +13,7 @@ namespace UtilityTool.Layout {
             LayoutDetails = new LayoutDetails();
 
             // Parse json file
-            string content = Regex.Replace(File.ReadAllText(@layoutPath), @"\\", @"\\");
+            string content = Regex.Replace(File.ReadAllText(layoutPath), @"\\", @"\\");
             JObject obj = JsonConvert.DeserializeObject<JObject>(content);
             // Go through each property and set the value
             foreach (JProperty prop in obj.Properties()) {
