@@ -22,12 +22,12 @@ namespace UtilityTool.Layout {
             string content = Regex.Replace(File.ReadAllText(layoutPath), @"\\", @"\\");
             JObject obj = JsonConvert.DeserializeObject<JObject>(content);
             // Go through each property and set the value
-            foreach (JProperty prop in obj.Properties()) {
+            foreach (JProperty property in obj.Properties()) {
                 // Special case for components
-                if (prop.Name == "Components") {
-                    AddComponents(prop.Value);
+                if (property.Name == "Components") {
+                    AddComponents(property.Value);
                 } else {
-                    LayoutDetails.SetProperty(prop);
+                    LayoutDetails.SetProperty(property);
                 }
             }
         }
@@ -36,26 +36,26 @@ namespace UtilityTool.Layout {
             IComponent component;
 
             // Create each component
-            foreach (var props in components) {
+            foreach (var properties in components) {
                 // Check that there is a Type property
-                if (props.Type == null) {
+                if (properties.Type == null) {
                     // No type for component
                     Console.WriteLine("No type specified for component");
                     continue;
                 }
 
-                switch ((string)props.Type) {
+                switch ((string)properties.Type) {
                     case "Button":
                         component = new LayoutButton();
-                        foreach (JProperty prop in props) {
-                            component.SetProperty(prop);
+                        foreach (JProperty property in properties) {
+                            component.SetProperty(property);
                         }
                         LayoutDetails.Add(component);
                         break;
 
                     default:
                         // Unhandled type
-                        Console.WriteLine("Unhandled type '{0}'", props.Type);
+                        Console.WriteLine("Unhandled type '{0}'", properties.Type);
                         break;
                 }
             }

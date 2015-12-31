@@ -37,14 +37,14 @@ namespace UtilityTool {
             form.Activate();
         }
 
-        public static void SetProperty(this Object obj, JProperty prop) {
-            PropertyInfo propToSet = obj.GetType().GetProperty(prop.Name);
-            propToSet.SetValue(obj, Convert.ChangeType(prop.Value, propToSet.PropertyType));
+        public static void SetProperty(this Object obj, JProperty jProperty) {
+            PropertyInfo property = obj.GetType().GetProperty(jProperty.Name);
+            property.SetValue(obj, Convert.ChangeType(jProperty.Value, property.PropertyType));
         }
 
-        public static void SetProperty(this Object obj, string prop, Object value) {
-            PropertyInfo propToSet = obj.GetType().GetProperty(prop);
-            propToSet.SetValue(obj, Convert.ChangeType(value, propToSet.PropertyType));
+        public static void SetProperty(this Object obj, string propertyName, Object value) {
+            PropertyInfo property = obj.GetType().GetProperty(propertyName);
+            property.SetValue(obj, Convert.ChangeType(value, property.PropertyType));
         }
     }
 }
