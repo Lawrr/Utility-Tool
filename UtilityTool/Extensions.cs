@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace UtilityTool {
@@ -33,6 +35,16 @@ namespace UtilityTool {
 
             form.BringToFront();
             form.Activate();
+        }
+
+        public static void SetProperty(this Object obj, JProperty prop) {
+            PropertyInfo propertyToSet = obj.GetType().GetProperty(prop.Name);
+            propertyToSet.SetValue(obj, Convert.ChangeType(prop.Value, propertyToSet.PropertyType));
+        }
+
+        public static void SetProperty(this Object obj, string prop, Object value) {
+            PropertyInfo propertyToSet = obj.GetType().GetProperty(prop);
+            propertyToSet.SetValue(obj, Convert.ChangeType(value, propertyToSet.PropertyType));
         }
     }
 }

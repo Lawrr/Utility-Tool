@@ -1,7 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
-
-namespace UtilityTool.Forms {
+﻿namespace UtilityTool.Layout {
     partial class LayoutForm {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +25,12 @@ namespace UtilityTool.Forms {
         private void InitializeComponent() {
             this.SuspendLayout();
             // 
-            // MainForm
+            // LayoutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "MainForm";
-            this.Text = String.Format("{0} {1}", Application.ProductName, Application.ProductVersion);
+            this.Name = "LayoutForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LayoutForm_FormClosing);
             this.Load += new System.EventHandler(this.LayoutForm_FormLoad);
             this.ResumeLayout(false);

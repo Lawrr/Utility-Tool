@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Windows.Forms;
-using UtilityTool.Forms;
+using UtilityTool.Layout;
 
 namespace UtilityTool {
     public static class Program {
@@ -25,7 +25,7 @@ namespace UtilityTool {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            MainForm = new LayoutForm();
+            MainForm = new LayoutForm((new LayoutBuilder("layout.json")).LayoutDetails);
             Tray = new Tray();
             HotKeyHandler = new HotKeyHandler();
 
