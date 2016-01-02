@@ -37,12 +37,18 @@ namespace UtilityTool {
             form.Activate();
         }
 
-        public static void SetProperty(this Object obj, JProperty jProperty) {
+        public static void SetProperty(this object obj, JProperty jProperty) {
             PropertyInfo property = obj.GetType().GetProperty(jProperty.Name);
-            property.SetValue(obj, Convert.ChangeType(jProperty.Value, property.PropertyType));
+
+            // Have to explicitly cast JArray
+            if (jProperty.Value is JArray) {
+                property.SetValue(obj, ((JArray)jProperty.Value).ToObject<object[]>());
+            } else {
+                property.SetValue(obj, Convert.ChangeType(jProperty.Value, property.PropertyType));
+            }
         }
 
-        public static void SetProperty(this Object obj, string propertyName, Object value) {
+        public static void SetProperty(this object obj, string propertyName, object value) {
             PropertyInfo property = obj.GetType().GetProperty(propertyName);
             property.SetValue(obj, Convert.ChangeType(value, property.PropertyType));
         }
