@@ -61,6 +61,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="NativeMethods.cs" />
+    <Compile Include="Tasks\BalloonTipTask.cs" />
     <Compile Include="Tasks\ITask.cs" />
     <Compile Include="Tasks\ProcessExecuteTask.cs" />
     <Compile Include="Extensions.cs" />
