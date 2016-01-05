@@ -37,16 +37,24 @@ namespace UtilityTool.Layout {
 
             // Create each component
             foreach (var properties in components) {
-                // Check that there is a Type property
-                if (properties.Type == null) {
+                // Check that there is a Control property
+                if (properties.Control == null) {
                     // No type for component
                     Console.WriteLine("No type specified for component");
                     continue;
                 }
 
-                switch ((string)properties.Type) {
+                switch ((string)properties.Control) {
                     case "Button":
                         component = new LayoutButton();
+                        foreach (JProperty property in properties) {
+                            component.SetProperty(property);
+                        }
+                        LayoutDetails.Add(component);
+                        break;
+
+                    case "None":
+                        component = new LayoutTaskHolder();
                         foreach (JProperty property in properties) {
                             component.SetProperty(property);
                         }

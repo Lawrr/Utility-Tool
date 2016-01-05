@@ -28,9 +28,9 @@ namespace UtilityTool.Layout {
         public void AddComponents(IContainer container) {
             // Add each component from the container
             foreach (IComponent component in container.Components) {
-                // Check if component is a ILayoutControl which needs initializing
-                if (component is ILayoutControl) {
-                    ((ILayoutControl)component).Init();
+                // Check if component is a ILayoutComponent which needs initializing
+                if (component is ILayoutComponent) {
+                    ((ILayoutComponent)component).Init();
                 }
                 // Check if component is a control which needs to be added
                 if (component is Control) {

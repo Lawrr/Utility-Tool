@@ -16,7 +16,9 @@ namespace UtilityTool.Tasks {
         public void Run() {
             Process.Start(Path);
             if (CloseOnRun) {
-                Program.MainForm.Hide();
+                Program.MainForm.InvokeSafe(() => {
+                    Program.MainForm.Hide();
+                });
             }
         }
     }

@@ -50,12 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Layout\ILayoutComponent.cs" />
     <Compile Include="Layout\LayoutButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Layout\LayoutBuilder.cs" />
     <Compile Include="Layout\ILayoutControl.cs" />
     <Compile Include="Layout\LayoutDetails.cs" />
+    <Compile Include="Layout\LayoutTaskHolder.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="NativeMethods.cs" />
     <Compile Include="Tasks\ITask.cs" />
     <Compile Include="Tasks\ProcessExecuteTask.cs" />
@@ -70,6 +74,7 @@
     <Compile Include="KeyboardHook.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tasks\TimerTask.cs" />
     <Compile Include="Tray.cs" />
     <EmbeddedResource Include="Layout\LayoutForm.resx">
       <DependentUpon>LayoutForm.cs</DependentUpon>

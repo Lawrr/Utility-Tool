@@ -44,7 +44,11 @@ namespace UtilityTool {
             if (jProperty.Value is JArray) {
                 property.SetValue(obj, ((JArray)jProperty.Value).ToObject<object[]>());
             } else {
-                property.SetValue(obj, Convert.ChangeType(jProperty.Value, property.PropertyType));
+                try {
+                    property.SetValue(obj, Convert.ChangeType(jProperty.Value, property.PropertyType));
+                } catch (NullReferenceException) {
+                    Console.WriteLine("Could not set property '{0}'", jProperty.Name);
+                }
             }
         }
 
