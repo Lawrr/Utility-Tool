@@ -1,5 +1,5 @@
 # Utility Tool
-An extendable tool to create programs with custom layouts which do tasks which you specific.
+An extendable tool to create programs with custom layouts which do tasks which you specify.
 
 # Current Tasks
 - ProcessExecuteTask
